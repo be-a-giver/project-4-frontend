@@ -10,8 +10,12 @@ class SignUp extends Component {
 
     this.state = {
       email: '',
+      name :'',
+      ID:'',
+      mobileNumber:'',
       password: '',
-      passwordConfirmation: ''
+      password_confirmation: ''
+
     }
   }
 
@@ -37,7 +41,7 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
+    const {name, ID, mobileNumber, email, password, password_confirmation } = this.state
 
     return (
       <form className='auth-form' onSubmit={this.onSignUp}>
@@ -52,6 +56,37 @@ class SignUp extends Component {
           placeholder="Email"
           onChange={this.handleChange}
         />
+
+        <label htmlFor="name">Name</label>
+                <input
+                  required
+                  name="name"
+                  value={name}
+                  type="text"
+                  placeholder="name"
+                  onChange={this.handleChange}
+                />
+
+        <label htmlFor="ID">ID</label>
+                <input
+                  required
+                  name="ID"
+                  value={ID}
+                  type="text"
+                  placeholder="ID"
+                  onChange={this.handleChange}
+                />
+
+        <label htmlFor="mobileNumber"> Mobile Number</label>
+                        <input
+                          required
+                          name="mobileNumber"
+                          value={mobileNumber}
+                          type="text"
+                          placeholder="mobileNumber"
+                          onChange={this.handleChange}
+                        />
+
         <label htmlFor="password">Password</label>
         <input
           required
@@ -61,11 +96,11 @@ class SignUp extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <label htmlFor="passwordConfirmation">Confirm Password</label>
+        <label htmlFor="password_confirmation">Confirm Password</label>
         <input
           required
-          name="passwordConfirmation"
-          value={passwordConfirmation}
+          name="password_confirmation"
+          value={password_confirmation}
           type="password"
           placeholder="Confirm Password"
           onChange={this.handleChange}

@@ -9,6 +9,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
+import PatientIndex from './patients/PatientIndex'
 
 class App extends Component {
   constructor () {
@@ -50,6 +51,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
+
+        <AuthenticatedRoute  user={user} exact path='/patients' render={() => (
+            <PatientIndex user={user}/>
+          )}/>
+                   
         </main>
       </React.Fragment>
     )
