@@ -10,6 +10,14 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
 import PatientIndex from './patients/PatientIndex'
+import Need from './patients/Need'
+import PatientShow from './patients/PatientShow'
+
+
+
+
+import Home from './patients/Home'
+
 
 class App extends Component {
   constructor () {
@@ -55,6 +63,21 @@ class App extends Component {
         <AuthenticatedRoute  user={user} exact path='/patients' render={() => (
             <PatientIndex user={user}/>
           )}/>
+
+        <AuthenticatedRoute  user={user} exact path='/need' render={() => (
+                      <Need user={user}/>
+                    )}/>
+
+        <AuthenticatedRoute  user={user}  exact path='/patients/:id' render={(props) => (
+            <PatientShow user={user} patientsId={props.match.params.id}/>
+          )}/>
+
+
+          <AuthenticatedRoute user={user} exact path='/home' render={() => (
+            <Home user={user}/>
+          )}/>
+
+   
                    
         </main>
       </React.Fragment>

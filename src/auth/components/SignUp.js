@@ -45,7 +45,9 @@ class SignUp extends Component {
 
     return (
       <form className='auth-form' onSubmit={this.onSignUp}>
+      <center>
         <h3>Sign Up</h3>
+        </center>
 
         <label htmlFor="email">Email</label>
         <input
@@ -105,7 +107,9 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
+        
         <button type="submit">Sign Up</button>
+       
       </form>
     )
   }

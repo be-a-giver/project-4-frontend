@@ -19,13 +19,13 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <React.Fragment>
-    <Link to="/">Home</Link>
+    <Link to="/home">Home</Link>
   </React.Fragment>
 )
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <h1>Uber, But For Taxis</h1>
+    <h1>Be a Giver</h1>
     <nav>
       { user && <span>Welcome, {user.name}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }

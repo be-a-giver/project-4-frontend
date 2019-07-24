@@ -22,3 +22,36 @@ export const destroy = (user,patientId) => {
         }
     })
 }
+
+
+
+
+export const create = (user,newPatient) => {
+    return axios({
+        method:'POST',
+        url:apiUrl + '/patients',
+        headers:{
+            "Authorization":`Bearer ${user.token}`
+        },
+        data:{
+            patient:newPatient
+        }
+    })
+}
+
+
+export const show = (user, patientId) => {
+    return axios({
+        method:'GET',
+        url: apiUrl + `/patients/${patientId}`,
+        headers:{
+            "Authorization":`Bearer ${user.token}`
+        }
+    })
+}
+
+
+
+
+
+
