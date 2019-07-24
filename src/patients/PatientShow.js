@@ -27,10 +27,10 @@ class PatientShow extends Component{
                 <h1>{this.state.patient.patientName}</h1>
                 <h1>{this.state.patient.age}</h1>
                 <h1>{this.state.patient.city}</h1>
-                <h1>{this.state.patient.image}</h1>
+                <img src={this.state.patient.image}/>
                 <h1>{this.state.patient.hospital}</h1>
                 <h1>{this.state.patient.fileNumber}</h1>
-                <h1>{this.state.patient.medicalReport}</h1>
+                <img src={this.state.patient.medicalReport}/>
                 
             </div>
         )

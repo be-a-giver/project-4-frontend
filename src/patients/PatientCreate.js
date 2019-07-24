@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
 import {create} from './api'
 import {withRouter} from 'react-router-dom'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 
-class Need extends Component {
+class PatientCreate extends Component {
     state = {
         dataForm : {
             "patientName": '',
@@ -33,8 +33,8 @@ class Need extends Component {
         const newPatient = this.state.dataForm
         const user = this.props.user
         create(user,newPatient)
-        .then(() => alert('created'))
         .then(() => this.props.history.push('/patients'))
+        // .then(() => alert('created'))
         .catch((error) => console.log(error))
     }
 
@@ -46,7 +46,7 @@ class Need extends Component {
             <input onChange={this.handleChange} type="text" name="patientName" value={this.state.dataForm.patientName}/>
             <br/>
             <label>Age</label>
-            <input  onChange={this.handleChange} type="text" name="Age" value={this.state.dataForm.Age}/>
+            <input  onChange={this.handleChange} type="number" name="age" value={this.state.dataForm.age}/>
             <br/>
             <label>City</label>
             <input  onChange={this.handleChange} type="text" name="city" value={this.state.dataForm.city}/>
@@ -58,48 +58,18 @@ class Need extends Component {
             <input  onChange={this.handleChange} type="text" name="hospital" value={this.state.dataForm.hospital}/>
             <br/>
             <label>File Number</label>
-            <input  onChange={this.handleChange} type="text" name="fileNumber" value={this.state.dataForm.fileNumber}/>
+            <input  onChange={this.handleChange} type="number" name="fileNumber" value={this.state.dataForm.fileNumber}/>
             <br/>
             <label>MedicalReport</label>
             <input  onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
             <br/>
-            <Link to="/home"><button type="submit">Create</button></Link>
+            <button type="submit">Create</button>
+            {/* <Link to="/home"><button type="submit">Create</button></Link> */}
         </form>
         </center>
-
-
-            // <div> 
-            //   <form>
-            //       <label>Petient Name</label>
-            //       <input type="text"/><br/>
-
-            //       <label>Age</label>
-            //       <input type="text"/><br/>
-
-            //       <label>City</label>
-            //       <input type="text"/><br/>
-
-            //       <label>Image</label>
-            //       <input type="text"/><br/>
-
-            //       <label>hospital</label>
-            //       <input type="text"/><br/>
-                  
-            //       <label>File Number</label>
-            //       <input type="text"/><br/>
-
-            //       <label>Medical Report</label>
-            //       <input type="text"/> <br/>
-
-            //       <button type="submit">Submit</button>
-                  
-
-            //   </form>
-            // </div>
-           
 
         
         )
     }
 }
-export default withRouter(Need)
+export default withRouter(PatientCreate)

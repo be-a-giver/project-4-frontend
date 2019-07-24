@@ -11,21 +11,18 @@ export const index = (user) => {
         }
     })
 }
- 
 
-export const destroy = (user,patientId) => {
+export const show = (user, patientId) => {
     return axios({
-        method:"DELETE",
-        url:apiUrl + `/patients/${patientId}`,
+        method:'GET',
+        url: apiUrl + `/patients/${patientId}`,
         headers:{
             "Authorization":`Bearer ${user.token}`
         }
     })
 }
 
-
-
-
+ 
 export const create = (user,newPatient) => {
     return axios({
         method:'POST',
@@ -40,15 +37,33 @@ export const create = (user,newPatient) => {
 }
 
 
-export const show = (user, patientId) => {
+export const destroy = (user,patientId) => {
     return axios({
-        method:'GET',
-        url: apiUrl + `/patients/${patientId}`,
+        method:"DELETE",
+        url:apiUrl + `/patients/${patientId}`,
         headers:{
             "Authorization":`Bearer ${user.token}`
         }
     })
 }
+
+
+export const update = (user,updatePatient,patientId) => {
+    return axios({
+        method:'PUT',
+        url:apiUrl + `/patients/${patientId}`,
+        headers:{
+            "Authorization":`Bearer ${user.token}`
+        },
+        data:{
+            patient:updatePatient
+        }
+    })
+}
+
+
+
+
 
 
 

@@ -13,6 +13,7 @@ class PatientIndex extends Component {
         const user = this.props.user
         index(user)
         .then(response => {
+            // console.log(response)
            const allPatients = response.data.patients;
            this.setState({
             patients:allPatients
@@ -28,7 +29,7 @@ class PatientIndex extends Component {
         .then(() => {
            const newPatient = this.state.patients.filter((patient) => patient._id != patientId)
             this.setState({
-                memes:newPatient
+                patients:newPatient
             })
         })
         .catch((error) => console.log(error))

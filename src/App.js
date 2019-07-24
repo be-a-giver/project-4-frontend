@@ -10,8 +10,9 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
 import PatientIndex from './patients/PatientIndex'
-import Need from './patients/Need'
+import PatientCreate from './patients/PatientCreate'
 import PatientShow from './patients/PatientShow'
+import PatientEdit from './patients/PatientEdit'
 
 
 
@@ -64,12 +65,12 @@ class App extends Component {
             <PatientIndex user={user}/>
           )}/>
 
-        <AuthenticatedRoute  user={user} exact path='/need' render={() => (
-                      <Need user={user}/>
-                    )}/>
+        <AuthenticatedRoute  user={user} exact path='/createPatients' render={() => (
+         <PatientCreate user={user}/>
+         )}/>
 
         <AuthenticatedRoute  user={user}  exact path='/patients/:id' render={(props) => (
-            <PatientShow user={user} patientsId={props.match.params.id}/>
+            <PatientShow user={user} patientId={props.match.params.id}/>
           )}/>
 
 
@@ -77,6 +78,9 @@ class App extends Component {
             <Home user={user}/>
           )}/>
 
+        <AuthenticatedRoute  user={user}  exact path='/patients/:id/edit' render={(props) => (
+            <PatientEdit user={user} patientId={props.match.params.id}/>
+          )}/>  
    
                    
         </main>
