@@ -1,10 +1,16 @@
 $charcoal: #bbb;
-
+header{
+  background-image: url(https://images.unsplash.com/photo-1478476868527-002ae3f3e159?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  
+}
 .main-header {
   align-items: center;
   border-bottom: 1px solid $charcoal;
   display: flex;
-  height: 100px;
+  height: 300px;
   padding: 0 20px;
 
   a,

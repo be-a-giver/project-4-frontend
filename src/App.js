@@ -9,6 +9,9 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
+import Home from './patient/Home'
+import Footer from './patient/Footer'
+import Welcome from './patient/Welcome'
 
 class App extends Component {
   constructor () {
@@ -50,6 +53,18 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
+          {/* <Route user={user} path='/home' render={() => (
+            <Home alert={this.alert} user={user} />
+          )} /> */}
+         {/* <Welcome user={user} /> */}
+         <Route exact path='/home' render={() => (
+            <Home alert={this.alert} setUser={this.setUser} />
+          )} />
+         <Route exact path='/' render={() => (
+            <Welcome alert={this.alert} setUser={this.setUser} />
+          )} />
+         <Footer user={user} />
+        
         </main>
       </React.Fragment>
     )
