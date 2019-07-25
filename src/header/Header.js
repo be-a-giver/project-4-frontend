@@ -5,6 +5,8 @@ import './Header.scss'
 
 const authenticatedOptions = (
   <React.Fragment>
+    <Link to='/patients'>Patients</Link>
+    <Link to='/createPatients'>Create Sitution</Link>
     <Link to="/change-password">Change Password</Link>
     <Link to="/sign-out">Sign Out</Link>
   </React.Fragment>
@@ -19,7 +21,7 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <React.Fragment>
-    <Link to="/home">Home</Link> 
+    <Link to="/home">Home</Link>
   </React.Fragment>
 )
 
@@ -28,7 +30,7 @@ const Header = ({ user }) => (
   <header className="main-header">
     <h1>Be a Giver</h1>
     <nav>
-      { user && <span>Welcome, {user.email}</span>}
+      { user && <span>Welcome, {user.name}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }
       { alwaysOptions }
     </nav>

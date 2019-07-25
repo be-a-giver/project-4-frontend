@@ -6,11 +6,7 @@ export const signUp = credentials => {
     method: 'POST',
     url: apiUrl + '/sign-up',
     data: {
-      credentials: {
-        email: credentials.email,
-        password: credentials.password,
-        password_confirmation: credentials.passwordConfirmation
-      }
+      credentials: credentials
     }
   })
 }
@@ -52,6 +48,17 @@ export const changePassword = (passwords, user) => {
         old: passwords.oldPassword,
         new: passwords.newPassword
       }
+    }
+  })
+}
+
+export const patients = user => {
+  return axios({
+    url: apiUrl + '/sign-out',
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${user.token}` // FOR EXPRESS
+      // 'Authorization': `Token ${user.token}` // FOR RAILS
     }
   })
 }

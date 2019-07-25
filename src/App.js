@@ -9,9 +9,16 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
-import Home from './patient/Home'
-import Footer from './patient/Footer'
-import Welcome from './patient/Welcome'
+import PatientIndex from './patients/PatientIndex'
+import PatientCreate from './patients/PatientCreate'
+import PatientShow from './patients/PatientShow'
+import PatientEdit from './patients/PatientEdit'
+
+
+
+
+import Home from './patients/Home'
+
 
 class App extends Component {
   constructor () {
@@ -53,18 +60,29 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-          {/* <Route user={user} path='/home' render={() => (
-            <Home alert={this.alert} user={user} />
-          )} /> */}
-         {/* <Welcome user={user} /> */}
-         <Route exact path='/home' render={() => (
-            <Home alert={this.alert} setUser={this.setUser} />
-          )} />
-         <Route exact path='/' render={() => (
-            <Welcome alert={this.alert} setUser={this.setUser} />
-          )} />
-         <Footer user={user} />
-        
+
+        <AuthenticatedRoute  user={user} exact path='/patients' render={() => (
+            <PatientIndex user={user}/>
+          )}/>
+
+        <AuthenticatedRoute  user={user} exact path='/createPatients' render={() => (
+         <PatientCreate user={user}/>
+         )}/>
+
+        <AuthenticatedRoute  user={user}  exact path='/patients/:id' render={(props) => (
+            <PatientShow user={user} patientId={props.match.params.id}/>
+          )}/>
+
+
+          <AuthenticatedRoute user={user} exact path='/home' render={() => (
+            <Home user={user}/>
+          )}/>
+
+        <AuthenticatedRoute  user={user}  exact path='/patients/:id/edit' render={(props) => (
+            <PatientEdit user={user} patientId={props.match.params.id}/>
+          )}/>  
+   
+                   
         </main>
       </React.Fragment>
     )
