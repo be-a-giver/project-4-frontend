@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom'
 // import {Link} from 'react-router-dom'
 
 
-class PatientCreate extends Component {
+class Want extends Component {
     state = {
         dataForm : {
             "patientName": '',
@@ -72,4 +72,4 @@ class PatientCreate extends Component {
         )
     }
 }
-export default withRouter(PatientCreate)
+export default withRouter(Want)
