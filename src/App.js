@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
+import SignUp_helper from './auth/components/SignUp_helper'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
@@ -13,6 +14,7 @@ import PatientIndex from './patients/PatientIndex'
 import PatientCreate from './patients/PatientCreate'
 import PatientShow from './patients/PatientShow'
 import PatientEdit from './patients/PatientEdit'
+import SignUpBoth from './auth/components/SignUpBoth'
 
 
 
@@ -48,12 +50,23 @@ class App extends Component {
           <AlertDismissible key={index} variant={alert.type} message={alert.message} />
         ))}
         <main className="container">
-          <Route path='/sign-up' render={() => (
+          <Route  exact path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
+
+          <Route path='/sign-up/helper' render={() => (
+            <SignUp_helper alert={this.alert} setUser={this.setUser} />
+          )} />
+
+          <Route path='/signup' render={() => (
+            <SignUpBoth alert={this.alert} setUser={this.setUser} />
+          )} />
+          
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
+
+
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
           )} />
@@ -82,7 +95,7 @@ class App extends Component {
             <PatientEdit user={user} patientId={props.match.params.id}/>
           )}/>  
    
-                   
+      
         </main>
       </React.Fragment>
     )

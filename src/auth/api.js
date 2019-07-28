@@ -11,6 +11,16 @@ export const signUp = credentials => {
   })
 }
 
+export const signUpHelper = credentials => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/sign-up/helper',
+    data: {
+      credentials: credentials
+    }
+  })
+}
+
 export const signIn = credentials => {
   return axios({
     url: apiUrl + '/sign-in',

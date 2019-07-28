@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {create} from './api'
 import {withRouter} from 'react-router-dom'
 // import {Link} from 'react-router-dom'
-
+import { Button } from 'reactstrap';
 
 class PatientCreate extends Component {
     state = {
@@ -63,7 +63,9 @@ class PatientCreate extends Component {
             <label>MedicalReport</label>
             <input  onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
             <br/>
-            <button type="submit">Create</button>
+            {/* <button type="submit">Create</button> */}
+            {/* <Button type="submit" color="danger">Create</Button>  */}
+            <button type="submit" class="btn btn-outline-info">Create</button>
             {/* <Link to="/home"><button type="submit">Create</button></Link> */}
         </form>
         </center>
