@@ -1,5 +1,6 @@
 $charcoal: #bbb;
 
+
 body{
   background-color: rgb(255, 255, 177) ;
 }
@@ -8,20 +9,30 @@ header{
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  
+}
+
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+
 }
 .main-header {
   align-items: center;
   text-decoration: none;
   border-bottom: 1px solid $charcoal;
   display: flex;
+
   height: 400px;
+=======
+  height: 200px;
+
   padding: 0 20px;
+  background-image: url(https://www.104china.com/assets/images/beagiver.png);
 
   a,
   span {
     font-size: 1.2em;
     margin: 0 15px;
+    font-family: 'Courier New', Courier, monospace;
   }
 }
 
@@ -30,6 +41,7 @@ header{
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+ 
 }
 
 @media (max-width: 600px) {
@@ -59,4 +71,8 @@ header{
       width: 80%;
     }
   }
+}
+
+body {
+  background-color: #FCF3CF;
 }
