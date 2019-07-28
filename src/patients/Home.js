@@ -10,6 +10,7 @@ class Home extends Component{
             <p>Is an electronic platform that combines rare medical situations <br/>
             that need help from community members and who want to provide help.</p>
 
+            <img src=""/>
             
             <div className="shape1">
                 <img src=" https://images.unsplash.com/photo-1498872270484-7ffbfa6951ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" className="image"/>
