@@ -8,6 +8,8 @@ const Home = () =>(
                 <h1>Be Giver</h1>
             <p>Is an electronic platform that combines rare medical situations <br/>
             that need help from community members and who want to provide help.</p>
+
+            <img src=""/>
             
             <button><Link to='/situations'>Medical situations</Link></button>
            

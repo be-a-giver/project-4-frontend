@@ -1,5 +1,6 @@
 import React ,{Component} from 'react'
 import {Link , Route} from 'react-router-dom'
+
 class Situations extends Component {
     render(){
         return(
@@ -18,8 +19,8 @@ class Situations extends Component {
                 </div>
                 :
                 <div>
-                    <button><Link to='/createPatients'>Do you need help ?</Link></button>
-                     <button><Link to='/want'>Do you want to help ? </Link></button>
+                    <button><Link to='/sign-up'>Do you need help ?</Link></button>
+                     <button><Link to='/sign-up'>Do you want to help ? </Link></button>
                 </div>
                 }
                 

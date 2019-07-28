@@ -33,7 +33,7 @@ class PatientCreate extends Component {
         const newPatient = this.state.dataForm
         const user = this.props.user
         create(user,newPatient)
-        .then(() => this.props.history.push('/patients'))
+        .then(() => this.props.history.push('/myProfile'))
         // .then(() => alert('created'))
         .catch((error) => console.log(error))
     }
