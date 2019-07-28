@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {show,update} from './api';
 import {withRouter} from 'react-router-dom';
 
+
 class PatientEdit extends Component{
     state={
         dataForm:{
@@ -80,6 +81,7 @@ class PatientEdit extends Component{
         <input  onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
         <br/>
         <button type='submit'>Update</button>
+        
     </form>
     </center>
         )
