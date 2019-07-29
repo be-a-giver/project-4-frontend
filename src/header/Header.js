@@ -7,23 +7,35 @@ import {navbar} from 'reactstrap'
 const authenticatedOptions = (user) =>(
   
   <React.Fragment>
-    {user.helper ?
-    " "
-
+    {user.helper ? 
+    ''
     :
-    <React.Fragment>
-    <Link to='/myProfile'>My Profile</Link>
-    {/* <Link to='/createPatients'>Create Sitution</Link> */}
-    {/* <Link to="/change-password" className="link">Change Password</Link> */}
-    </React.Fragment>
+  <React.Fragment>
+    <Link to='/myProfile'>Profile</Link>
+    <Link to='/createPatients'>Create Sitution</Link>
+    <Link to="/change-password">Change Password</Link>
+  </React.Fragment>
     }
+   
 
-    <Link to="/sign-out" className="link">Sign Out</Link>
-    </React.Fragment>
+    <Link to="/sign-out">Sign Out</Link>
+  </React.Fragment>
 )
+
+    
+    // <React.Fragment>
+    // <Link to='/myProfile'>My Profile</Link>
+    // {/* <Link to='/createPatients'>Create Sitution</Link> */}
+    // {/* <Link to="/change-password" className="link">Change Password</Link> */}
+    // </React.Fragment>
+    // }
+
+    // <Link to="/sign-out" className="link">Sign Out</Link>
+    // </React.Fragment>
+
 const unauthenticatedOptions = (
   <React.Fragment>
-    <Link to="/sign-up" >Sign Up</Link>
+    <Link to="/signup" >Sign Up</Link>
     <Link to="/sign-in" className="link">Sign In</Link>
   </React.Fragment>
 )

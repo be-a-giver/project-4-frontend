@@ -46,7 +46,7 @@ class Home extends Component{
                 </div>
                     :
                 <div >
-                    <button className="butt "><Link  className="med-sit" to='/sign-up'><span>Do you want to help ?</span> </Link></button>
+                    <button className="butt "><Link  className="med-sit" to='/sign-up/helper'><span>Do you want to help ?</span> </Link></button>
                </div>
                     }
                 </div>
