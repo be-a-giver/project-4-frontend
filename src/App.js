@@ -20,7 +20,6 @@ import Footer from './patients/Footer'
 import Situations from './patients/Sitiuations'
 import Want from './patients/Want' 
 
-import SignUpBoth from './auth/components/SignUpBoth'
 
 
 
