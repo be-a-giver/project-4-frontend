@@ -16,6 +16,11 @@ import PatientShow from './patients/PatientShow'
 import PatientEdit from './patients/PatientEdit'
 import SignUpBoth from './auth/components/SignUpBoth'
 
+import Footer from './patients/Footer'
+import Situations from './patients/Sitiuations'
+import Want from './patients/Want' 
+
+
 
 
 
@@ -74,7 +79,7 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
 
-        <AuthenticatedRoute  user={user} exact path='/patients' render={() => (
+        <AuthenticatedRoute  user={user} exact path='/myProfile' render={() => (
             <PatientIndex user={user}/>
           )}/>
 
@@ -87,13 +92,22 @@ class App extends Component {
           )}/>
 
 
-          <AuthenticatedRoute user={user} exact path='/home' render={() => (
+          <Route user={user} exact path='/' render={() => (
             <Home user={user}/>
           )}/>
 
         <AuthenticatedRoute  user={user}  exact path='/patients/:id/edit' render={(props) => (
             <PatientEdit user={user} patientId={props.match.params.id}/>
-          )}/>  
+          )}/> 
+          <AuthenticatedRoute  user={user}  exact path='/want' render={(props) => (
+            <Want user={user} patientId={props.match.params.id}/>
+          )}/> 
+
+          <Route  user={user}  exact path='/situations' render={(props) => (
+            <Situations user={user} patientId={props.match.params.id}/>
+          )}/> 
+          
+          <Footer user={user} /> 
    
       
         </main>

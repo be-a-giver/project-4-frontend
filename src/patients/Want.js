@@ -2,9 +2,9 @@ import React,{Component} from 'react'
 import {create} from './api'
 import {withRouter} from 'react-router-dom'
 // import {Link} from 'react-router-dom'
-import { Button } from 'reactstrap';
 
-class PatientCreate extends Component {
+
+class Want extends Component {
     state = {
         dataForm : {
             "patientName": '',
@@ -33,7 +33,7 @@ class PatientCreate extends Component {
         const newPatient = this.state.dataForm
         const user = this.props.user
         create(user,newPatient)
-        .then(() => this.props.history.push('/myProfile'))
+        .then(() => this.props.history.push('/patients'))
         // .then(() => alert('created'))
         .catch((error) => console.log(error))
     }
@@ -63,9 +63,7 @@ class PatientCreate extends Component {
             <label>Medical Report</label>
             <input  onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
             <br/>
-            {/* <button type="submit">Create</button> */}
-            {/* <Button type="submit" color="danger">Create</Button>  */}
-            <button type="submit" class="btn btn-outline-info">Create</button>
+            <button type="submit">Create</button>
             {/* <Link to="/home"><button type="submit">Create</button></Link> */}
         </form>
         </center>
@@ -74,4 +72,4 @@ class PatientCreate extends Component {
         )
     }
 }
-export default withRouter(PatientCreate)
+export default withRouter(Want)

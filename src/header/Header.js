@@ -8,17 +8,13 @@ import {navbar} from 'reactstrap'
 const authenticatedOptions = (user) => (
   <React.Fragment>
 
+    <Link to='/myProfile'>My Profile</Link>
+    {/* <Link to='/createPatients'>Create Sitution</Link> */}
 
 
-    {user.helper ? 
-    ''
-    : 
-    <React.Fragment>
-      <Link to='/patients'>Patients</Link>
-     <Link to='/createPatients'>Create Sitution</Link>
-    </React.Fragment>
-  }
-   
+
+
+  
     <Link to="/change-password">Change Password</Link>
     <Link to="/sign-out">Sign Out</Link>
     
@@ -39,13 +35,16 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <React.Fragment>
-    <Link to="/home">Home</Link>
+    <Link to="/">Home</Link>
   </React.Fragment>
 )
 
 const Header = ({ user }) => (
   <header className="main-header">
-    {/* <h1>Be a Giver</h1> */}
+
+    <Link to='/situations'><h1>Be a Giver</h1></Link>
+    
+
     <nav>
       { user && <span>Welcome, {user.name}</span>}
       { user ? authenticatedOptions(user) : unauthenticatedOptions }
