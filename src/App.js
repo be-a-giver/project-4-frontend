@@ -20,6 +20,10 @@ import Footer from './patients/Footer'
 import Situations from './patients/Sitiuations'
 import Want from './patients/Want' 
 
+import SignUpBoth from './auth/components/SignUpBoth'
+
+
+
 
 
 
@@ -58,15 +62,12 @@ class App extends Component {
           <Route  exact path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
-
           <Route path='/sign-up/helper' render={() => (
             <SignUp_helper alert={this.alert} setUser={this.setUser} />
           )} />
-
           <Route path='/signup' render={() => (
             <SignUpBoth alert={this.alert} setUser={this.setUser} />
           )} />
-          
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />

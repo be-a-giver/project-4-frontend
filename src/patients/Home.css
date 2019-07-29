@@ -1,0 +1,139 @@
+body{
+background-color: rgba(105, 98, 89, 0.931);
+text-align: center;
+
+}
+.home{
+    font-size:20px;
+    margin: 100px;
+}
+.quistion{
+    color: rgb(194, 190, 190);
+    font-family: 'Marck Script', cursive;
+    font-family: 'Overlock', cursive;
+    
+}
+.medecal-sit{
+    color: rgb(194, 190, 190);
+    font-family: 'Marck Script', cursive;
+    font-family: 'Overlock', cursive;
+    margin-top:70px 
+}
+.med-sit{
+    text-decoration: none;
+    color:  rgb(73, 68, 63);
+     
+    
+}
+a:hover {
+    color: rgb(51, 49, 49);
+    text-decoration: none;
+}
+
+.shape1{
+      border-radius: 999em;
+      width: 350px;
+      height: 350px;
+      padding: 5px;
+      line-height: 0;
+      border: 10px solid #000;
+      background-color:  rgb(73, 68, 63);
+      margin-right: 500px;
+
+}
+.shape2{
+    border-radius: 999em;
+    width: 350px;
+    height: 350px;
+    padding: 5px;
+    line-height: 0;
+    border: 10px solid #000;
+    background-color:  rgb(73, 68, 63);
+    margin-left: 500px;
+
+}
+.image{
+
+    border-radius: 999em;
+    height: 100%;
+    width: 100%;	
+    margin: 0;
+   
+}
+
+.butt{
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: none;
+    /* color: #FFFFFF; */
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+   
+    
+}
+
+.butt span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.butt:hover {
+    background-color: #b3aca5;
+    color: white;
+  }
+
+  .butt span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .butt:hover span {
+    padding-right: 25px;
+  }
+  
+  .butt:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .needhelp{
+      margin-top: -250px;
+      margin-bottom: 150px;
+      margin-left: 400px;
+  }
+
+  .wantohelp{
+    margin-top: -190px;
+    margin-bottom: 200px;
+    margin-right: 400px;
+  }
+  .butt1{
+    margin-top: -250px;
+
+    margin-top: -190px;
+    margin-bottom: 200px;
+    margin-right: 400px;
+    width: 40%;
+    margin: 10px 10px;
+    
+  }
+  .butt2{
+
+    margin-top: -190px;
+    margin-bottom: 200px;
+    margin-right: 400px;
+    
+  }
+  .butt1 a{
+    color: #000
+
+  }

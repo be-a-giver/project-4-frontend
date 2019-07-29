@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
 import { signUpHelper, signIn } from '../api'
 import messages from '../messages'
-
 class SignUp_helper extends Component {
   constructor () {
     super()
-
     this.state = {
       email: '',
       name :'',
@@ -15,19 +12,14 @@ class SignUp_helper extends Component {
       mobileNumber:'',
       password: '',
       password_confirmation: ''
-
     }
   }
-
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
-
   onSignUp = event => {
     event.preventDefault()
-
     const { alert, history, setUser } = this.props
-
     signUpHelper(this.state)
       .then(() => signIn(this.state))
       .then(res => setUser(res.data.user))
@@ -39,16 +31,13 @@ class SignUp_helper extends Component {
         alert(messages.signUpFailure, 'danger')
       })
   }
-
   render () {
     const {name, ID, mobileNumber, email, password, password_confirmation } = this.state
-
     return (
       <form className='auth-form' onSubmit={this.onSignUp}>
       <center>
         <h3>Sign Up As Helper </h3>
         </center>
-
         <label htmlFor="email">Email</label>
         <input
           required
@@ -58,7 +47,6 @@ class SignUp_helper extends Component {
           placeholder="Email"
           onChange={this.handleChange}
         />
-
         <label htmlFor="name">Name</label>
                 <input
                   required
@@ -68,7 +56,6 @@ class SignUp_helper extends Component {
                   placeholder="name"
                   onChange={this.handleChange}
                 />
-
         <label htmlFor="ID">ID</label>
                 <input
                   required
@@ -78,7 +65,6 @@ class SignUp_helper extends Component {
                   placeholder="ID"
                   onChange={this.handleChange}
                 />
-
         <label htmlFor="mobileNumber"> Mobile Number</label>
                         <input
                           required
@@ -88,7 +74,6 @@ class SignUp_helper extends Component {
                           placeholder="mobileNumber"
                           onChange={this.handleChange}
                         />
-
         <label htmlFor="password">Password</label>
         <input
           required
@@ -115,5 +100,4 @@ class SignUp_helper extends Component {
     )
   }
 }
-
 export default withRouter(SignUp_helper)
