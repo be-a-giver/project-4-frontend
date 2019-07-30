@@ -49,7 +49,7 @@ class PatientEdit extends Component{
         const patientId = this.props.match.params.id;
         const updatePatient = this.state.dataForm;
         update(user,updatePatient,patientId)
-        .then(() => this.props.history.push(`/patients`))
+        .then(() => this.props.history.push(`/myProfile`))
         .catch((error) => console.log(error))
     }
 
@@ -57,33 +57,34 @@ class PatientEdit extends Component{
     render(){
     
         return(
-        <center>
-        <form onSubmit={this.handleSubmit}>
-        <label>Petient Name</label>
-        <input onChange={this.handleChange} type="text" name="patientName" value={this.state.dataForm.patientName}/>
+        <div className="contact">
+        <form onSubmit={this.handleSubmit}  className="feedback">
+        <label className="contitle">Petient Name</label>
+        <input  className="form" onChange={this.handleChange} type="text" name="patientName" value={this.state.dataForm.patientName}/>
         <br/>
         <label>Age</label>
-        <input  onChange={this.handleChange} type="number" name="age" value={this.state.dataForm.age}/>
+        <input  className="form"  onChange={this.handleChange} type="number" name="age" value={this.state.dataForm.age}/>
         <br/>
         <label>City</label>
-        <input  onChange={this.handleChange} type="text" name="city" value={this.state.dataForm.city}/>
+        <input  className="form"  onChange={this.handleChange} type="text" name="city" value={this.state.dataForm.city}/>
         <br/>
         <label>Image</label>
-        <input  onChange={this.handleChange} type="text" name="image" value={this.state.dataForm.image}/>
+        <input  className="form"  onChange={this.handleChange} type="text" name="image" value={this.state.dataForm.image}/>
         <br/>
         <label>Hospital</label>
-        <input  onChange={this.handleChange} type="text" name="hospital" value={this.state.dataForm.hospital}/>
+        <input  className="form"  onChange={this.handleChange} type="text" name="hospital" value={this.state.dataForm.hospital}/>
         <br/>
         <label>File Number</label>
-        <input  onChange={this.handleChange} type="number" name="fileNumber" value={this.state.dataForm.fileNumber}/>
+        <input  className="form"  onChange={this.handleChange} type="number" name="fileNumber" value={this.state.dataForm.fileNumber}/>
         <br/>
         <label>MedicalReport</label>
-        <input  onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
+        <input  className="form"  onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
         <br/>
-        <button type='submit'>Update</button>
+        <button type='submit' className='btnn'><span>Update</span></button>
         
     </form>
-    </center>
+    </div>
+
         )
     }
 }

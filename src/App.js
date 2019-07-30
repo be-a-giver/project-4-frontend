@@ -54,9 +54,9 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header user={user} />
-        {alerts.map((alert, index) => (
+        {/* {alerts.map((alert, index) => (
           <AlertDismissible key={index} variant={alert.type} message={alert.message} />
-        ))}
+        ))} */}
         <main className="container">
           <Route exact path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />

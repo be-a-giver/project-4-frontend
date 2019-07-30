@@ -33,42 +33,46 @@ class PatientCreate extends Component {
         const newPatient = this.state.dataForm
         const user = this.props.user
         create(user,newPatient)
-        .then(() => this.props.history.push('/myProfile'))
+        .then(() => this.props.history.push('/situations'))
         // .then(() => alert('created'))
         .catch((error) => console.log(error))
     }
 
     render(){
         return(
-            <center>
-            <form onSubmit={this.handleSubmit}>
+            <div className="contact">
+            <form onSubmit={this.handleSubmit} className="feedback">
+
+                <h2 className="contitle">Add your information</h2>
             <label>Petient Name</label>
-            <input onChange={this.handleChange} type="text" name="patientName" value={this.state.dataForm.patientName}/>
+            <input className="form"   onChange={this.handleChange} type="text" name="patientName" value={this.state.dataForm.patientName}/>
             <br/>
             <label>Age</label>
-            <input  onChange={this.handleChange} type="number" name="age" value={this.state.dataForm.age}/>
+            <input className="form"   onChange={this.handleChange} type="number" name="age" value={this.state.dataForm.age}/>
             <br/>
             <label>City</label>
-            <input  onChange={this.handleChange} type="text" name="city" value={this.state.dataForm.city}/>
+            <input className="form"   onChange={this.handleChange} type="text" name="city" value={this.state.dataForm.city}/>
             <br/>
             <label>Image</label>
-            <input  onChange={this.handleChange} type="text" name="image" value={this.state.dataForm.image}/>
+            <input className="form"   onChange={this.handleChange} type="text" name="image" value={this.state.dataForm.image}/>
             <br/>
             <label>Hospital</label>
-            <input  onChange={this.handleChange} type="text" name="hospital" value={this.state.dataForm.hospital}/>
+            <input className="form"   onChange={this.handleChange} type="text" name="hospital" value={this.state.dataForm.hospital}/>
             <br/>
             <label>File Number</label>
-            <input  onChange={this.handleChange} type="number" name="fileNumber" value={this.state.dataForm.fileNumber}/>
+            <input className="form"   onChange={this.handleChange} type="number" name="fileNumber" value={this.state.dataForm.fileNumber}/>
             <br/>
             <label>Medical Report</label>
-            <input  onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
+            <input className="form"   onChange={this.handleChange} type="text" name="medicalReport" value={this.state.dataForm.medicalReport}/>
             <br/>
             {/* <button type="submit">Create</button> */}
             {/* <Button type="submit" color="danger">Create</Button>  */}
-            <button type="submit" class="btn btn-outline-info">Create</button>
+            <button type="submit" className='btnn'><span>Create</span></button>
             {/* <Link to="/home"><button type="submit">Create</button></Link> */}
         </form>
-        </center>
+
+        </div>
+       
 
         
         )

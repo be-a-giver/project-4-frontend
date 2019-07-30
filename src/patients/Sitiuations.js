@@ -1,37 +1,43 @@
 import React ,{Component} from 'react'
 import {Link , Route} from 'react-router-dom'
+import {showallpatient} from './api'
 
 
 class Situations extends Component {
+
+    state = {
+        patients: []
+    }
+    componentDidMount() {
+        showallpatient ()
+        .then(response => {
+            console.log(response.data.patients)
+         this.setState({
+            patients: response.data.patients
+         })
+        }) 
+        .catch(error=> (console.log(error))
+        )
+    }
+
     render(){
         return(
             <div> 
                 <h1 className="medecal-sit">Medical Situations </h1>
+                <div className="info2">
+                {this.state.patients.map((patient,index) => (
+                    <div key={index}>
+                    
+                        <p>{patient.patientName}</p>
+                        <p>{patient.age}</p>
+                        
+                        <img src = {patient.image} class="scaled"  width = "100" hight = "100"/>
+                        <img src = {patient.image}  width = "100" hight = "100"/>
+                     </div>
 
-                {/* code for add situation */}
-                <br/>
-                {/* <Route path="/situations" Component={Situations}/> 
-                <Route path="/situations" Component={Situations}/>  */}
-                {this.props.user ? 
-                <div>
-                    <button className="butt"><Link to='/createPatients'>Do you need help ?</Link></button>
-                    <button className="butt"><Link to='/want'>Do you want to help ? </Link></button> 
+                ))}
                 </div>
-                :
-                <div>
-                    <button className="butt"><Link to='/sign-up'>Do you need help ?</Link></button>
-                     <button className="butt"><Link to='/sign-up'>Do you want to help ? </Link></button>
-                </div>
-                }
-                
-
-
-                <br/> 
-                {/* <Route path="/need" Component={Need}/> */}
-                {/* <Link to='/need'>Do you need help?</Link>      */}
-                {/* <button>Do you need help?</button> */}
-            </div>
-           
+           </div>
 
         
         )

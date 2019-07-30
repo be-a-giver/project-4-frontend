@@ -1,10 +1,11 @@
 import React , {Component} from 'react'
+import './Contact.css'
 class Contact extends Component {
     render(){
         return(
             <div className="contact">
         <form className="feedback">
-        <h1 className="title"> Contact us </h1>
+        <h1 className="contitle"> Contact us </h1>
           <label  >Name </label><br/>
           <input className="form" type="name" placeholder ="Your Name"/>
           <br />
@@ -17,7 +18,7 @@ class Contact extends Component {
           </textarea>
           <br />
 
-          <button className='btnn' type="submit" >Submit</button>
+          <button className='btnn' type="submit" ><span>Submit</span></button>
         </form>
   
       </div>
