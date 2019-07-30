@@ -5,13 +5,13 @@ class SignUpBoth extends Component {
   render( ) {
     return (
       <React.Fragment>
-          <br/>
-          <br/>
-          <br/> <br/> <br/>
-        <nav class="navbar navbar-dark bg-dark " >
-        <Link to="/sign-up">Sign Up as user</Link>
-        <Link to="/sign-up/helper">Sign Up As helper</Link>
-        </nav>
+        <button className="btnn b1">
+        <Link to="/sign-up"><span>Sign Up as user</span></Link>
+        </button>
+        
+        <button className="btnn b2">
+        <Link to="/sign-up/helper"><span>Sign Up As helper</span></Link>
+        </button >
        </React.Fragment>
     )
   }

@@ -25,7 +25,7 @@ class ChangePassword extends Component {
 
     changePassword(this.state, user)
       .then(() => alert(messages.changePasswordSuccess, 'success'))
-      .then(() => history.push('/'))
+      .then(() => history.push('/change-password'))
       .catch(error => {
         console.error(error)
         this.setState({ oldPassword: '', newPassword: '' })
@@ -37,11 +37,12 @@ class ChangePassword extends Component {
     const { oldPassword, newPassword } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.onChangePassword}>
-        <h3>Change Password</h3>
+      <div className="contact">
+      <form className="feedback" onSubmit={this.onChangePassword}>
+        <h3 className="contitle">Change Password</h3>
 
         <label htmlFor="oldpw">Old Password</label>
-        <input
+        <input className="form"
           required
           name="oldPassword"
           value={oldPassword}
@@ -50,7 +51,7 @@ class ChangePassword extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="newPassword">New Password</label>
-        <input
+        <input className="form"
           required
           name="newPassword"
           value={newPassword}
@@ -58,8 +59,9 @@ class ChangePassword extends Component {
           placeholder="New Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Change Password</button>
+        <button type="submit" className='btnn'><span>Change Password</span></button>
       </form>
+      </div>
     )
   }
 }

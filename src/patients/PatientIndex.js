@@ -40,11 +40,11 @@ class PatientIndex extends Component {
             <div>
                 {this.state.patients.map((patient,index) => (
                    <div key={index}>
-                        <Link to={`/patients/${patient._id}`}><h1>{patient.patientName} {patient.age} {patient.city} {patient.city} {patient.hospital} {patient.fileNumber} </h1></Link>
+                        <Link to={`/patients/${patient._id}`}><h1>{patient.patientName} {patient.age} {patient.city} {patient.city} {patient.hospital} {patient.fileNumber} </h1></Link><br/>
                         <img src={patient.image}/> 
                         <img src={patient.medicalReport}/>
-                        <button onClick={() => this.destroy(patient._id)}>Delete</button>
-                        <Link to={`/patients/${patient._id}/edit`}><button>Edit</button></Link>
+                        <button onClick={() => this.destroy(patient._id)} className='btnn'><span>Delete</span></button>
+                        <Link to={`/patients/${patient._id}/edit`}><button className='btnn'><span>Edit</span></button></Link>
                     </div>
                 ))}
             </div>

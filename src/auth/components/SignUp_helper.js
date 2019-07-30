@@ -34,12 +34,13 @@ class SignUp_helper extends Component {
   render () {
     const {name, ID, mobileNumber, email, password, password_confirmation } = this.state
     return (
-      <form className='auth-form' onSubmit={this.onSignUp}>
-      <center>
-        <h3>Sign Up As Helper </h3>
-        </center>
+      <div className="contact">
+      <form className="feedback" onSubmit={this.onSignUp}>
+     
+        <h3 className="contitle">Sign Up As Helper </h3>
+        
         <label htmlFor="email">Email</label>
-        <input
+        <input className="form" 
           required
           name="email"
           value={email}
@@ -48,7 +49,7 @@ class SignUp_helper extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="name">Name</label>
-                <input
+                <input className="form" 
                   required
                   name="name"
                   value={name}
@@ -57,7 +58,7 @@ class SignUp_helper extends Component {
                   onChange={this.handleChange}
                 />
         <label htmlFor="ID">ID</label>
-                <input
+                <input className="form" 
                   required
                   name="ID"
                   value={ID}
@@ -66,7 +67,7 @@ class SignUp_helper extends Component {
                   onChange={this.handleChange}
                 />
         <label htmlFor="mobileNumber"> Mobile Number</label>
-                        <input
+                        <input className="form" 
                           required
                           name="mobileNumber"
                           value={mobileNumber}
@@ -75,7 +76,7 @@ class SignUp_helper extends Component {
                           onChange={this.handleChange}
                         />
         <label htmlFor="password">Password</label>
-        <input
+        <input className="form" 
           required
           name="password"
           value={password}
@@ -84,7 +85,7 @@ class SignUp_helper extends Component {
           onChange={this.handleChange}
         />
         <label htmlFor="password_confirmation">Confirm Password</label>
-        <input
+        <input className="form" 
           required
           name="password_confirmation"
           value={password_confirmation}
@@ -94,9 +95,10 @@ class SignUp_helper extends Component {
         />
         
         {/* <button type="submit">Sign Up</button> */}
-        <button type="submit" class="btn btn-success">Sign Up</button>
+        <button type="submit"className='btnn'><span>Sign Up</span></button>
        
       </form>
+      </div>
     )
   }
 }

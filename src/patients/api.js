@@ -12,6 +12,13 @@ export const index = (user) => {
     })
 }
 
+
+export const showallpatient = () => {
+    return  axios({
+        method:'GET',
+        url: apiUrl + '/patientsall'
+    })
+}
 export const show = (user, patientId) => {
     return axios({
         method:'GET',

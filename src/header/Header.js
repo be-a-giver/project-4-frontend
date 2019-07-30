@@ -13,7 +13,8 @@ const authenticatedOptions = (user) =>(
   <React.Fragment>
     <Link to='/myProfile'>Profile</Link>
     <Link to='/createPatients'>Create Sitution</Link>
-    <Link to="/change-password">Change Password</Link>
+   <Link to="/change-password">Change Password</Link>
+
   </React.Fragment>
     }
    
@@ -45,7 +46,7 @@ const alwaysOptions = (
     <Link to="/" >Home</Link>
     <Link to="/about">About us</Link>
     <Link to="/contact">Contact us</Link>
-    <Link to="/situations">Medical situations</Link>
+    <Link to="/situations">Medical Situations</Link>
   </React.Fragment>
 )
 
@@ -57,8 +58,11 @@ const Header = ({ user }) => (
     
     <nav className="nav">
       { alwaysOptions }
-      {/* { user && <span>Welcome, {user.name}</span>} */}
+      
       { user ? authenticatedOptions(user) : unauthenticatedOptions }
+      <div className="welcome">
+      { user && <span>Welcome, {user.name}</span>}
+      </div>
       
     </nav>
   </header>
